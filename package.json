@@ -1,0 +1,21 @@
+{
+  "name": "cathopocket",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CathoPocket: guia católico digital, gratuito e sem login. Sua fé, sempre à mão.",
+  "type": "module",
+  "scripts": {
+    "build": "tsx src/build/build.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "tsx --test tests/*.test.ts",
+    "serve": "npx --no-install http-server dist -p 4173 -c-1",
+    "test:e2e": "npm run build && node --test tests/e2e.mjs",
+    "check": "npm run typecheck && npm test && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "esbuild": "^0.28.0"
+  }
+}
